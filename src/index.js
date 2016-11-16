@@ -22,9 +22,11 @@ if (module.hot) {
   module.hot.accept('./containers/App', () => {
     const NextApp = require('./containers/App').default;
     ReactDOM.render(
-      <AppContainer>
-        <NextApp/>
-      </AppContainer>,
+      <Provider store={store}>
+        <AppContainer>
+          <NextApp/>
+        </AppContainer>
+      </Provider>,
       document.getElementById('root')
     );
   });
